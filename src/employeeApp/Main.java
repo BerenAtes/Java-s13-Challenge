@@ -1,5 +1,6 @@
 package employeeApp;
 
+import com.workintech.challenge.Company;
 import com.workintech.challenge.Employee;
 import com.workintech.challenge.Healthplan;
 import com.workintech.challenge.Plan;
@@ -16,18 +17,46 @@ public class Main
      */
     private static void workWithData ()
     {
-        Healthplan healthplan=new Healthplan(16,"Beren", Plan.MEDIUM);
+        Healthplan healthplan1=new Healthplan(1,"A Sigorta", Plan.BASIC);
+        Healthplan healthplan2=new Healthplan(2,"B Sigorta", Plan.MEDIUM);
+        Healthplan healthplan3=new Healthplan(3,"C Sigorta", Plan.ADVANCE);
         System.out.println("Healthplan*************************");
-        System.out.println(healthplan);
-        System.out.println("healthplan.getId(): " + healthplan.getId());
-        System.out.println("healthplan.getName(): " + healthplan.getName());
-        System.out.println("healthplan.getPlan(): " + healthplan.getPlan());
+        System.out.println("healthplan1: " +healthplan1);
+        System.out.println("healthplan2: " +healthplan2);
+        System.out.println("healthplan3: " +healthplan3);
+        System.out.println("healthplan1.getId(): " + healthplan1.getId());
+        System.out.println("healthplan2.getName(): " + healthplan2.getName());
+        System.out.println("healthplan3.getPlan(): " + healthplan3.getPlan());
 
 
         System.out.println("-------------------------------");
-        Employee employee=new Employee(3,"Beren","beren@beren.com","123456",new String[2]);
-        System.out.println("Healthplan*************************");
+        System.out.println("Employee*************************");
+        String [] healthPlans= new String[4];
+        //new String[]{"A Sigorta","B Sigorta","C Sigorta",null}
+        Employee employee=new Employee(1,"Beren","beren@beren.com","123456",healthPlans);
         System.out.println(employee);
+        employee.addHealthPlan(0,"A Sigorta");
+        employee.addHealthPlan(1,"B Sigorta");
+        employee.addHealthPlan(2,":C Sigorta");
+        System.out.println(employee);
+        employee.addHealthPlan(2,":D Sigorta");
+        employee.addHealthPlan(-2,":D Sigorta");
+        employee.addHealthPlan(5,":D Sigorta");
+
+        System.out.println("-------------------------------");
+        System.out.println("Company*************************");
+        String [] developerNames= new String[3];
+        Company company=new Company(1,"HediyeDükkanı",125245.5,developerNames);
+        System.out.println(company);
+        company.addEmployee(1,"John");
+        company.addEmployee(3,"John");
+        company.addEmployee(-1,"John");
+        company.addEmployee(1,"John");
+        System.out.println(company);
+
+
+
+
 
 
     }

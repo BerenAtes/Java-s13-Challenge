@@ -8,12 +8,15 @@ public class Company {
     private String name;
     private double giro;
     private String[] developerNames;
-
-
-
-    private double updatedGiro(double giro){
-        return giro<0? 0:giro;
+    private void updatedGiro(double giro){
+        if (giro<0){
+            this.giro=0;
+        } else {
+            this.giro=giro;
+        }
     }
+
+
     public Company(int id,String name,double giro,String[] developerNames){
         this.id=id;
         this.name=name;
@@ -53,7 +56,7 @@ public class Company {
         this.developerNames = developerNames;
     }
 
-    public void addEmployye(int index,String name){
+    public void addEmployee(int index,String name){
         if(index<0) {
             System.out.println("İndex değeri sıfırdan küçük olamaz!");
         } else {

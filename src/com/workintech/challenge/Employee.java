@@ -10,7 +10,7 @@ public class Employee {
     private String[] healthPlans;
 
 
-    public Employee(int id,String fullName,String email,String password,String[] healthplans){
+    public Employee(int id,String fullName,String email,String password,String[] healthPlans){
         this.id=id;
         this.fullName=fullName;
         this.email=email;
@@ -62,7 +62,7 @@ public class Employee {
 
     public void addHealthPlan(int index,String name){
         if(index<0) {
-            System.out.println("İndex değeri sıfırdan küçük olamaz!");
+            System.out.println("İndex değeri sıfırdan küçük olamaz!" + index);
         } else {
             try{
                 if(healthPlans[index]==null){
